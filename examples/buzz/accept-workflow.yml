@@ -1,0 +1,21 @@
+name: OEXL accept deliverable
+description: Settle only when the linked buyer reacts with a check mark.
+trigger:
+  on: reaction_added
+  emoji: "✅"
+steps:
+  - id: accept_deliverable
+    action: call_webhook
+    url: "__OEXL_PUBLIC_URL__/v1/integrations/buzz/decisions"
+    method: POST
+    headers:
+      X-OEXL-Webhook-Secret: "__OEXL_BUZZ_WEBHOOK_SECRET__"
+      X-Buzz-Relay: "__BUZZ_RELAY_URL__"
+      X-Buzz-Author: "{{trigger.author}}"
+      X-Buzz-Channel: "{{trigger.channel_id}}"
+      X-Buzz-Event: "{{trigger.message_id}}"
+      X-Buzz-Emoji: "{{trigger.emoji}}"
+  - id: acknowledge
+    if: "steps_accept_deliverable_output_status == 200"
+    action: send_message
+    text: "OEXL recorded the acceptance. The accepted deliverable is now settling."

@@ -1,0 +1,5 @@
+repository_key: ELAO
+rac_spec: "0.1"
+
+ticketing:
+  provider: github
