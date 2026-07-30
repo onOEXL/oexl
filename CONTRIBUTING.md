@@ -9,6 +9,8 @@ repository.
 - Search existing issues and pull requests.
 - Open or comment on an issue before beginning a substantial change.
 - Keep each pull request focused on one observable outcome.
+- For a material interface or product change, identify an accepted artifact
+  under `decisions/` and a bounded live roadmap before implementation.
 - Report vulnerabilities privately through [SECURITY.md](SECURITY.md).
 - Read the [public/private boundary](docs/public-private-boundary.md).
 
@@ -23,6 +25,8 @@ pnpm check
 ## Pull requests
 
 - Add or update tests for changed behaviour.
+- Name the accepted AsDecided artifact and live roadmap governing material
+  changes. Use `Not applicable` only for bounded maintenance work.
 - Explain compatibility, security, licensing, and trust-boundary effects.
 - Do not include credentials, private data, proprietary third-party material,
   or code copied from a private OEXL repository.

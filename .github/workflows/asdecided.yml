@@ -1,0 +1,20 @@
+name: AsDecided
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  gate:
+    name: Corpus gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check specification and native config parity
+        run: diff -u .rac/config.yaml .decided/config.yaml
+      - uses: asdecided/core/pr-gate-action@v0.24.1
+        with:
+          path: decisions/

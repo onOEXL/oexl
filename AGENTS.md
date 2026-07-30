@@ -26,6 +26,15 @@
   provider, or internet access.
 - Use OEXL for the product and `oexl` for protocol and package identifiers.
 - Do not imply an official partnership or endorsement by an integration target.
+- The `decisions/` AsDecided corpus is the durable authority for this public
+  extension repository. Material work must trace to an accepted artifact and a
+  bounded live roadmap.
+- The corpus targets RAC specification `0.1`. Treat `asdecided/spec` as the
+  normative compatibility authority and `asdecided/core` as the reference
+  implementation. Keep `.rac/config.yaml` and `.decided/config.yaml`
+  byte-identical until those repositories converge on one configuration path.
+- The public corpus must remain useful to contributors without copying or
+  paraphrasing confidential platform strategy, controls, or implementation.
 
 Work on a feature branch and open a pull request. Do not commit directly to
 `main` after the repository bootstrap.
