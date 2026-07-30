@@ -14,6 +14,7 @@ const output = execFileSync(
 
 const failures = output
   .split("\x1e")
+  .map((record) => record.trim())
   .filter(Boolean)
   .flatMap((record) => {
     const [sha = "", body = ""] = record.split("\x1f");
