@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/buzz" },
+    { "path": "./packages/github" },
+    { "path": "./packages/nwc" }
+  ]
+}

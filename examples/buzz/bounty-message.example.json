@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "oexl.buzz-task.v1",
+  "repository": {
+    "cloneUrl": "https://github.com/OWNER/REPOSITORY",
+    "owner": "OWNER",
+    "repoId": "OWNER/REPOSITORY",
+    "baseSha": "EXACT_40_CHARACTER_GIT_COMMIT_SHA"
+  },
+  "outcome": "Describe the accepted result, not the attempt.",
+  "acceptanceCriteria": ["State one objective condition the buyer can review."],
+  "reward": {
+    "amountMinor": "100",
+    "currency": "USD"
+  },
+  "allowedPaths": ["src/**", "tests/**"],
+  "validation": {
+    "method": "buyer_review",
+    "commands": []
+  },
+  "permittedExecutionModes": ["human_supervised", "autonomous"],
+  "deadline": "2099-01-01T12:00:00.000Z"
+}
