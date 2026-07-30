@@ -1,4 +1,4 @@
-name: DCO
+name: Commit policy
 
 on:
   pull_request_target:
@@ -22,6 +22,12 @@ jobs:
         env:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: git fetch --no-tags origin "$HEAD_SHA"
+      - name: Check Conventional Commit headers
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: node scripts/check-commit-standards.mjs "$BASE_SHA" "$HEAD_SHA"
       - name: Check commit sign-offs
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}

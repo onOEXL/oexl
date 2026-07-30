@@ -38,6 +38,45 @@ pnpm check
   git commit -s
   ```
 
+## Commit and pull-request titles
+
+Every commit header and pull-request title uses:
+
+```text
+<type>(<scope>): <lower-case imperative summary>
+```
+
+Allowed types are `build`, `chore`, `ci`, `docs`, `feat`, `fix`, `perf`,
+`refactor`, `revert`, `style`, and `test`. A scope is required, must be
+lower-case kebab-case, and should name the smallest stable subsystem affected.
+Common public scopes include `buzz`, `github`, `nwc`, `protocol`, `examples`,
+`docs`, `security`, `deps`, `release`, `ci`, and `repo`.
+
+Use the type to describe the effect:
+
+```text
+feat(buzz): verify signed acceptance receipts
+fix(github): reject stale publication commands
+docs(protocol): define replay-safe webhook cursors
+chore(deps): update the pnpm lockfile
+ci(repo): enforce the AsDecided corpus gate
+```
+
+`chore(engine)` is appropriate for engine maintenance; a behavioural engine
+change would use `feat(engine)`, `fix(engine)`, `perf(engine)`, or
+`refactor(engine)`.
+
+Keep the complete header to 72 characters, start the summary in lower case, and
+do not end it with a full stop. Use `!` before the colon for an intentional
+breaking change.
+
+For material work, add the governing authority to the commit body:
+
+```text
+AsDecided-Artifact: ELAO-…
+AsDecided-Roadmap: <codename> (ELAO-…)
+```
+
 Substantial protocol changes require an issue and a written decision record
 before implementation.
 

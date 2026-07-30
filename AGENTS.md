@@ -35,6 +35,10 @@
   byte-identical until those repositories converge on one configuration path.
 - The public corpus must remain useful to contributors without copying or
   paraphrasing confidential platform strategy, controls, or implementation.
+- Commit headers and pull-request titles use
+  `<type>(<scope>): <lower-case imperative summary>`. Material commit bodies
+  identify their AsDecided artifact and roadmap, and every commit carries the
+  contributor's own DCO sign-off.
 
 Work on a feature branch and open a pull request. Do not commit directly to
 `main` after the repository bootstrap.
